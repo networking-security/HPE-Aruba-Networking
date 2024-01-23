@@ -1,5 +1,5 @@
 ## Topología
-![](image.png)
+![](./Imagenes/image.png)
 ## Configuración ISL
 **CX-1**
 ```go
