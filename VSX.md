@@ -85,7 +85,7 @@ vlan 10
 vlan 20
     vsx-sync
 ```
-##Configuración MCLAG
+## Configuración MCLAG
 **CX-1**
 ```go
 interface lag 1 multi-chassis
