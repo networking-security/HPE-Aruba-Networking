@@ -174,3 +174,32 @@ evpn
         route-target export auto
         route-target import auto
 ```
+## Pruebas de conectividad
+**Ubuntu-1 -> Ubuntu-2**
+```go
+root@Ubuntu-1:~# ping 192.168.10.3
+PING 192.168.10.3 (192.168.10.3) 56(84) bytes of data.
+64 bytes from 192.168.10.3: icmp_seq=1 ttl=64 time=5.35 ms
+64 bytes from 192.168.10.3: icmp_seq=2 ttl=64 time=2.50 ms
+64 bytes from 192.168.10.3: icmp_seq=3 ttl=64 time=4.46 ms
+64 bytes from 192.168.10.3: icmp_seq=4 ttl=64 time=2.29 ms
+64 bytes from 192.168.10.3: icmp_seq=5 ttl=64 time=2.62 ms
+^C
+--- 192.168.10.3 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 2.290/3.441/5.348/1.229 ms
+```
+**Ubuntu-3 -> Ubuntu-4**
+```go
+root@Ubuntu-3:~# ping 192.168.20.2
+PING 192.168.20.2 (192.168.20.2) 56(84) bytes of data.
+64 bytes from 192.168.20.2: icmp_seq=1 ttl=64 time=7.81 ms
+64 bytes from 192.168.20.2: icmp_seq=2 ttl=64 time=3.12 ms
+64 bytes from 192.168.20.2: icmp_seq=3 ttl=64 time=2.58 ms
+64 bytes from 192.168.20.2: icmp_seq=4 ttl=64 time=2.70 ms
+64 bytes from 192.168.20.2: icmp_seq=5 ttl=64 time=2.57 ms
+^C
+--- 192.168.20.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 2.568/3.756/7.810/2.036 ms
+```
