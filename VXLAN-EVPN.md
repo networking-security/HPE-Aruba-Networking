@@ -1,4 +1,4 @@
-## Topoligía
+## Topología
 ![](./Imagenes/image2.png)
 ## Configuración OSPF
 **CX-5**
