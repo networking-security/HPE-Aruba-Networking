@@ -66,10 +66,10 @@ interface loopback 0
 ```go
 vlan 1,10,20
 interface vxlan 1
-    source ip 192.168.0.7
+    source ip 192.168.0.5
     no shutdown
     vni 1010
-        vlan 10                                                
+        vlan 10
     vni 1020
         vlan 20
 ```
@@ -98,17 +98,20 @@ interface vxlan 1
 ## Configuración EVPN
 **CX-5**
 ```go
+router ospf 1
+    router-id 192.168.0.5
+    area 0.0.0.0
 router bgp 65501
-    bgp router-id 192.168.0.7
-    neighbor 192.168.0.5 remote-as 65501
-    neighbor 192.168.0.5 update-source loopback 0
+    bgp router-id 192.168.0.5
     neighbor 192.168.0.6 remote-as 65501
     neighbor 192.168.0.6 update-source loopback 0
+    neighbor 192.168.0.7 remote-as 65501                       
+    neighbor 192.168.0.7 update-source loopback 0
     address-family l2vpn evpn
-        neighbor 192.168.0.5 activate
-        neighbor 192.168.0.5 send-community extended
         neighbor 192.168.0.6 activate
         neighbor 192.168.0.6 send-community extended
+        neighbor 192.168.0.7 activate
+        neighbor 192.168.0.7 send-community extended
     exit-address-family
 
 evpn
