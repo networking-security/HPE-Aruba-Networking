@@ -98,9 +98,6 @@ interface vxlan 1
 ## Configuración EVPN
 **CX-5**
 ```go
-router ospf 1
-    router-id 192.168.0.5
-    area 0.0.0.0
 router bgp 65501
     bgp router-id 192.168.0.5
     neighbor 192.168.0.6 remote-as 65501
