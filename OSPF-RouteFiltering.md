@@ -84,8 +84,6 @@ interface vlan 900
     ip ospf 1 area 0.0.0.11
     no ip ospf passive
     ip ospf network point-to-point
-    ip ospf authentication message-digest
-    ip ospf message-digest-key 1 md5 plaintext Ospf123!
 !
 router ospf 1
     router-id 3.3.3.3
@@ -106,8 +104,6 @@ interface vlan 900
     ip ospf 1 area 0.0.0.22
     no ip ospf passive
     ip ospf network point-to-point
-    ip ospf authentication message-digest
-    ip ospf message-digest-key 1 md5 plaintext Ospf123!
 !
 router ospf 1
     router-id 4.4.4.4
@@ -129,3 +125,7 @@ interface vlan 900
     ip ospf authentication message-digest
     ip ospf message-digest-key 1 md5 plaintext Ospf123!
 ```
+## OSPF - Neighbords
+**R1**
+![alt text](image.png)
+**R2**
