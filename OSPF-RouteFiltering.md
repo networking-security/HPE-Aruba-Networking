@@ -127,10 +127,75 @@ interface vlan 900
 ```
 ## OSPF - Neighbords
 **R1**
+
 ![](./Imagenes/neighbords-R1.png)
+
 **R2**
+
 ![](./Imagenes/neighbords-R2.png)
+
 **CX3**
+
 ![](./Imagenes/neighbords-CX3.png)
+
 **CX4**
+
 ![](./Imagenes/neighbords-CX4.png)
+
+## Configuración Loopbacks
+**CX3**
+```go
+!
+interface loopback 10
+    ip address 172.21.10.1/24
+    ip ospf 1 area 0.0.0.11
+interface loopback 11
+    ip address 172.21.11.1/24
+    ip ospf 1 area 0.0.0.11
+interface loopback 12
+    ip address 172.21.12.1/24
+    ip ospf 1 area 0.0.0.11
+interface loopback 13
+    ip address 172.21.13.1/24
+    ip ospf 1 area 0.0.0.11
+interface loopback 14
+    ip address 172.21.14.1/24
+    ip ospf 1 area 0.0.0.11
+!
+```
+**CX4**
+```go
+!
+interface loopback 10
+    ip address 172.22.10.1/24
+    ip ospf 1 area 0.0.0.22
+interface loopback 11
+    ip address 172.22.11.1/24
+    ip ospf 1 area 0.0.0.22
+interface loopback 12
+    ip address 172.22.12.1/24
+    ip ospf 1 area 0.0.0.22
+interface loopback 13
+    ip address 172.22.13.1/24
+    ip ospf 1 area 0.0.0.22
+interface loopback 14
+    ip address 172.22.14.1/24
+    ip ospf 1 area 0.0.0.22
+!
+```
+## OSPF - Routing Table
+**R1**
+
+![](./Imagenes/routingtable-R1.png)
+
+**R2**
+
+![](./Imagenes/routingtable-R2.png)
+
+**CX3**
+
+![](./Imagenes/routingtable-CX3.png)
+
+**CX4**
+
+![](./Imagenes/routingtable-CX4.png)
