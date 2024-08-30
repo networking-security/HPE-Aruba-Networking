@@ -204,6 +204,7 @@ interface loopback 14
 Se requiere filtrar las siguientes IPs en CX3:
 * 172.22.11.1/32
 * 172.22.13.1/32
+
 **CX3**
 ```go
 !                                           
