@@ -127,5 +127,10 @@ interface vlan 900
 ```
 ## OSPF - Neighbords
 **R1**
-![alt text](image.png)
+![](./Imagenes/neighbords-R1.png)
 **R2**
+![](./Imagenes/neighbords-R2.png)
+**CX3**
+![](./Imagenes/neighbords-CX3.png)
+**CX4**
+![](./Imagenes/neighbords-CX4.png)
