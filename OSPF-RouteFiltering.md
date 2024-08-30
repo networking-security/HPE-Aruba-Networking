@@ -199,3 +199,22 @@ interface loopback 14
 **CX4**
 
 ![](./Imagenes/routingtable-CX4.png)
+
+## OSPF - Route Filtering
+Se requiere filtrar las siguientes IPs en CX3:
+* 172.22.11.1/32
+* 172.22.13.1/32
+**CX3**
+```go
+!                                           
+ip prefix-list PL1 seq 5 deny 172.22.11.1/32
+ip prefix-list PL1 seq 10 deny 172.22.13.1/32
+ip prefix-list PL1 seq 1000 permit any
+!
+router ospf 1
+    distribute-list prefix PL1 in
+```
+
+![](./Imagenes/routefiltering.png)
+
+> Una vez aplicado el filtro se observa que las IPs siguen en la Database Table, esto debido a que el Database Table debe ser igual en toda el área OSPF, pero ya no se inyectan en la tabla de enrutamiento.
