@@ -1,1 +1,1 @@
-** Laboratorios realizados en GNS3 con equipos del fabricante Aruba.
+Laboratorios realizados en GNS3 con equipos del fabricante Aruba.
